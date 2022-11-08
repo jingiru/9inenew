@@ -109,10 +109,9 @@
             form.addEventListener('submit', e => {
               e.preventDefault()
               	fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("이쁘게 만들어 보겠습니다!!!!!"))
                 	.catch(error => console.error('Error!', error.message))
-			.finally(response => alert("이쁘게 만들어 보겠습니다!!!!!"))
-			alert('이쁘게 만들어 보겠습니다!!!!!');
-			window.location = 'https://youtu.be/wkWdTdd2Tww';
+			.finally(response => window.location = 'https://youtu.be/wkWdTdd2Tww')
             })
           </script>
 
