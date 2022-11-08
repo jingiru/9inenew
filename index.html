@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 22%;
+                margin-left: 20%;
+            }
+            .register-heading{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #000000;
+            }
+            .register-heading h1{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #000000;
+            }
+            .register{
+            	outline: 10px double #2DA7F5;
+                margin-top: 3%;
+                padding: 3%;
+                border-radius: 2.5rem;
+            }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+    </style>
+
+</head>
+<body>
+    
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <h3 class="register-heading"><strong>나인 단체티 투표</strong></h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                    	<fieldset>
+										  <legend><hr> 반팔 티셔츠 선택</legend>
+										  <img src = "./t1.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t1" id="foo" value="v"> 1번　</label>
+										  <img src = "./t2.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t2" id="foo" value="v"> 2번　</label>
+										  <img src = "./t3.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t3" id="foo" value="v"> 3번　</label>
+										  <img src = "./t4.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t4" id="foo" value="v"> 4번　</label>
+										  <img src = "./t5.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t5" id="foo" value="v"> 5번　</label>
+										  <img src = "./t6.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="t6" id="foo" value="v"> 6번　</label>
+										</fieldset>
+
+                                    	<br>
+                                    	<fieldset>
+										  <legend>자켓 시안 선택</legend>
+										  <img src = "./j1.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="j1" id="foo" value="v"> 1번　</label>
+										  <img src = "./j2.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="j2" id="foo" value="v"> 2번　</label>
+										  <img src = "./j3.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="j3" id="foo" value="v"> 3번　</label>
+										  <img src = "./j4.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="j4" id="foo" value="v"> 4번　</label>
+										  <img src = "./j5.png" width=500px>
+										  <label><input style="zoom:2.0;" type="checkbox" name="j5" id="foo" value="v"> 5번　</label>
+										</fieldset>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="제출" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzX3-5t1z67HXJn4rM7FF14rAYy1aaYlkYQ4pK0dtmwGcO56vQyqxC9NnhMpSbrznS5/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("이쁘게 만들어 보겠습니다!!!!!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
